@@ -17,7 +17,9 @@ function numberOfBorrows({id}, books) {
 // get every time user's id matches borrow books id
 // return a number for the ammount of times there was a match
 const borrowed = books.filter(book => book.borrows.some(trans => trans.id ===  id));
-return borrowed.length;
+return borrowed.reduce((acc) => {
+  return acc + 1;
+},0);
 }
 
 function getBooksPossessedByAccount(account, books, authors) {

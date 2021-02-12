@@ -1,16 +1,22 @@
 function totalBooksCount(books) {
-  return books.length;
+  return books.reduce((acc) => {
+    return acc + 1;
+  },0);
 }
 
 function totalAccountsCount(accounts) {
-  return accounts.length;
+  return accounts.reduce((acc) => {
+    return acc + 1;
+  },0);
 }
 
 function booksBorrowedCount(books) {
   // filtering out the books that are loaned out by checking if the first object in the borrows array is false
   const borrowed = books.filter(({borrows}) => !borrows[0].returned);
   // returning the length of the newly filtered array
-  return borrowed.length;
+  return borrowed.reduce((acc) => {
+    return acc + 1;
+  },0);;
 }
 
 function getMostCommonGenres(books) {
