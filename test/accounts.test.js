@@ -2,7 +2,7 @@ const { expect } = require("chai");
 const {
   findAccountById,
   sortAccountsByLastName,
-  numberOfBorrows,
+  getTotalNumberOfBorrows,
   getBooksPossessedByAccount,
 } = require("../public/src/accounts.js");
 
@@ -40,7 +40,7 @@ describe("Accounts Page", () => {
   describe("numberOfBorrows()", () => {
     it("should return the number of times an account has created a 'borrow' record", () => {
       const account = accounts[0];
-      const actual = numberOfBorrows(account, books);
+      const actual = getTotalNumberOfBorrows(account, books);
       expect(actual).to.equal(2);
     });
   });

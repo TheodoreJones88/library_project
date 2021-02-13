@@ -1,8 +1,8 @@
 const { expect } = require("chai");
 const {
-  totalBooksCount,
-  totalAccountsCount,
-  booksBorrowedCount,
+  getTotalBooksCount,
+  getTotalAccountsCount,
+  getBooksBorrowedCount,
   getMostCommonGenres,
   getMostPopularBooks,
   getMostPopularAuthors,
@@ -22,31 +22,31 @@ describe("Home Page", () => {
 
   describe("totalBooksCount()", () => {
     it("should return the total number of books in the array", () => {
-      const actual = totalBooksCount([{}, {}]);
+      const actual = getTotalBooksCount([{}, {}]);
       expect(actual).to.equal(2);
     });
 
     it("should return zero if the array is empty", () => {
-      const actual = totalBooksCount([]);
+      const actual = getTotalBooksCount([]);
       expect(actual).to.equal(0);
     });
   });
 
   describe("totalAccountsCount()", () => {
     it("should return the total number of accounts in the array", () => {
-      const actual = totalAccountsCount([{}, {}]);
+      const actual = getTotalAccountsCount([{}, {}]);
       expect(actual).to.equal(2);
     });
 
     it("should return zero if the array is empty", () => {
-      const actual = totalAccountsCount([]);
+      const actual = getTotalAccountsCount([]);
       expect(actual).to.equal(0);
     });
   });
 
   describe("booksBorrowedCount()", () => {
     it("should return the total number of books that are currently borrowed", () => {
-      const actual = booksBorrowedCount(books);
+      const actual = getBooksBorrowedCount(books);
       expect(actual).to.equal(6);
     });
   });

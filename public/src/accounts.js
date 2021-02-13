@@ -11,7 +11,7 @@ function sortAccountsByLastName(accounts) {
   return accounts.sort(({name: {last: lastA}}, {name: {last: lastB}}) => (lastA > lastB ? 1 : -1));
 }
 
-function numberOfBorrows({id}, books) {
+function getTotalNumberOfBorrows({id}, books) {
 // get user's id from account
 // get access to the "borrow" object to get the id
 // get every time user's id matches borrow books id
@@ -44,6 +44,6 @@ function getBooksPossessedByAccount(account, books, authors) {
 module.exports = {
   findAccountById,
   sortAccountsByLastName,
-  numberOfBorrows,
+  getTotalNumberOfBorrows,
   getBooksPossessedByAccount,
 };
